@@ -7,58 +7,66 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+## # PROYECTO UNIVERSITARIO DE FACTURACIÓN
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Este repositorio contiene el código fuente del proyecto universitario de facturación. El objetivo de este proyecto es implementar un sistema de facturación utilizando las mejores prácticas de programación y realizar diversas pruebas para garantizar la calidad del software.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Pruebas realizadas
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Durante el desarrollo de este proyecto se llevaron a cabo las siguientes pruebas:
 
-## Learning Laravel
+1. **Pruebas de testeo**: Se implementaron pruebas unitarias utilizando el framework de pruebas PHPUnit para verificar el correcto funcionamiento de las diferentes partes del sistema.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+2. **Automatización de pruebas**: Se utilizó Laravel Dusk, una herramienta de automatización de pruebas de navegador, para realizar pruebas de aceptación que simulan la interacción del usuario con la aplicación.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+3. **Depuración y monitoreo**: Se empleó Laravel Telescope para depurar y monitorear el rendimiento de la aplicación, identificando posibles problemas y optimizando su funcionamiento.
 
-## Laravel Sponsors
+4. **Pruebas de integración**: Se realizaron pruebas de integración para verificar la correcta comunicación entre los diferentes componentes del sistema, como el registro de clientes, productos, y generación de facturas.
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+5. **Sistematización**: Se aplicaron buenas prácticas de programación y diseño de software para garantizar la modularidad, reutilización y escalabilidad del sistema de facturación.
 
-### Premium Partners
+6. **Análisis de calidad**: Se utilizó SonarQube para realizar un análisis estático del código fuente, identificar posibles problemas de mantenibilidad, deuda técnica y vulnerabilidades de seguridad, y mejorar la calidad del código.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+El proyecto ha obtenido resultados positivos en las pruebas realizadas, lo que demuestra el compromiso con la calidad y el cumplimiento de los estándares de desarrollo de software.
 
-## Contributing
+## Instrucciones de instalación
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Para instalar y ejecutar el proyecto en tu entorno local, sigue los siguientes pasos:
 
-## Code of Conduct
+1. Clona este repositorio en tu máquina local utilizando el siguiente comando:
+   ```
+   git clone https://github.com/Bryanpercy118/ProyectoAsacor.git
+   ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+2. Accede al directorio del proyecto:
+   ```
+   cd ProyectoAsacor
+   ```
 
-## Security Vulnerabilities
+3. Instala las dependencias del proyecto utilizando Composer:
+   ```
+   composer install
+   ```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+4. Configura las variables de entorno del proyecto. Puedes duplicar el archivo `.env.example` y renombrarlo como `.env`. Luego, actualiza las variables de entorno según tu configuración.
 
-## License
+5. Genera una clave de aplicación única para el proyecto:
+   ```
+   php artisan key:generate
+   ```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+6. Ejecuta las migraciones de la base de datos y alimenta el sistema con datos iniciales:
+   ```
+   php artisan migrate --seed
+   ```
+
+7. Inicia el servidor de desarrollo:
+   ```
+   php artisan serve
+   ```
+
+8. Accede a la aplicación en tu navegador web a través de la URL `http://localhost:8000`.
+
+Si tienes alguna pregunta o necesitas ayuda durante la instalación o ejecución del proyecto, no dudes en contactarme.
+
+¡Gracias por tu interés en este proyecto de facturación universitario!
