@@ -21,7 +21,7 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $orders = Order::with('products', 'customer')->get();
+        $orders = Order::orderBy('created_at','DESC')->with('products', 'customer')->get();
 
         return view('orders.index', compact('orders'));
     }
@@ -70,7 +70,7 @@ class OrderController extends Controller
         $customer = new Buyer([
             'name'          => $order->customer->name,
             'custom_fields' => [
-                'email' => $order->customer->email,
+                'phone' => $order->customer->phone,
             ],
         ]);
 
@@ -91,8 +91,7 @@ class OrderController extends Controller
             ->buyer($customer)
             ->seller($seller)
             ->currencySymbol('$')
-            ->currencyCode('USD')
-            ->taxRate(15)
+            ->currencyCode('COP')
             ->addItems($items);
 
         return $invoice->download();
@@ -138,8 +137,11 @@ class OrderController extends Controller
      * @param  \App\Models\Order  $order
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Order $order)
+    public function destroy($id)
     {
         //
+        Order::destroy($id);
+        return redirect('order')->with('flash_message','Order Delete');
+    
     }
 }
